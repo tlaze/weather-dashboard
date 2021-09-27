@@ -13,16 +13,16 @@ header div{
     top:25px;
 }
 
-#searchBox{
-    padding: 25px;
-}
-
-#searchLabel{
-    font-size:25px;
-}
-
 #cityName{
     margin-top:10px;
     margin-bottom: 10px;
+}
+
+#searchButton{
+    margin-bottom:20px;
+}
+
+#pastSearchBox{
+    border-top: 3px solid black;
 }
 

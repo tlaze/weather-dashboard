@@ -24,51 +24,48 @@
   <div id="boxContainers" class="bg-secondary">
     
     <div class="row">
-
-      <section id="searchBox" class="col-md-4 bg-success text-light">
+      <div class="searchColumn col-md-4">
+      <section id="searchBox" class="col-md-12 bg-success text-light">
         <label class="col-lg text-center" id="searchLabel">Search for a City</label>
-        <input type="text" id="cityName" autofocus class="form-control">
-        <button type="button" onclick="citySearch()" class="btn btn-primary btn-sm col-lg">Search</button>
-      </section> 
-
-      <aside id="descriptionBox" class="col-md-8 bg-warning">
-        weather descripton
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse eum voluptate ipsam possimus consequatur, sit amet aperiam quod similique a, aliquam exercitationem alias quaerat, accusantium vel laborum error. Omnis, qui?
-        Beatae, maxime libero quibusdam perspiciatis maiores quis temporibus facere mollitia cupiditate tempore nemo eum. Libero, amet enim dolor, reiciendis veritatis nam cupiditate quas ea nisi pariatur, impedit ab perferendis rerum.
-        Optio incidunt maiores atque dolore ducimus commodi deleniti impedit aut, harum expedita quis, dicta autem reiciendis esse a vero dolorum. Illo omnis quasi amet cumque incidunt possimus perspiciatis ad sequi.
-        Minus, maxime! Ipsa, voluptates odit cumque, voluptate nihil at doloremque ratione mollitia quae impedit ut? Corporis harum, exercitationem perspiciatis laudantium, veniam asperiores autem praesentium esse quasi placeat voluptas blanditiis ipsa.
-        Optio deleniti vero et ducimus autem iure eum praesentium soluta, atque commodi quidem aspernatur architecto magni ipsam excepturi hic sequi? Cum quod libero fugit voluptates incidunt beatae autem eum numquam?
-        Ipsa libero ad ipsam blanditiis repellendus! Totam ipsa voluptate perspiciatis mollitia libero ratione magnam, repudiandae quos nemo asperiores ullam corporis ipsam ex amet possimus quaerat beatae dolore doloremque cum pariatur.
-        Est, ipsam magni incidunt iusto facilis voluptatibus nulla similique. Dolore dicta distinctio iusto molestias? Possimus assumenda dicta libero, quo facere illo distinctio architecto laborum atque error fugit est eos numquam?
-        Iure dolores, animi laboriosam facilis porro architecto, nemo molestiae adipisci voluptate molestias dolorem natus. Voluptatem quibusdam quod harum temporibus eum animi repudiandae pariatur, ex rerum! Ipsa odio assumenda a omnis!
-        Recusandae assumenda, ipsam quae pariatur excepturi ut? Eius perferendis deserunt ex accusantium aliquam obcaecati repellendus non, magni mollitia ab earum hic, ullam cumque maiores officiis, velit voluptatum. Libero, labore cum.
-        Deserunt, inventore, cum quis voluptate eaque accusamus quae mollitia, odio nemo quas eveniet dolore incidunt cupiditate consectetur dolor quisquam. Minus, facere doloremque iusto non cum fuga explicabo enim a sit?
-      </aside>
+        <input type="text" id="cityName" placeholder="City Name" autofocus class="form-control">
+        <button id="searchButton" type="button" class="btn btn-primary btn-sm col-lg">Search</button>
+        
+        <aside id="pastSearchBox" class="col-md-12 bg-danger">
+          <p id="cityList">Previous Searches</p>
+        </aside>
+        </section> 
+      </div>
       
 
-      <aside id="pastSearchBox" class="col-md-4">
-        city searches
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt minima ipsam error iusto minus nihil? Ipsam veniam illo voluptas odit accusamus nihil odio, voluptatem amet incidunt cupiditate voluptate, repellat minima.
-        Facere suscipit, nihil modi aliquid recusandae tenetur deleniti perspiciatis atque. Nam nostrum, exercitationem reprehenderit consequatur, provident architecto atque quod dignissimos eos mollitia velit sed laboriosam sunt cumque aspernatur a commodi!
-        Id hic voluptatum molestiae similique modi atque, vitae ipsa eligendi distinctio porro quo mollitia ipsam eius ad delectus nobis harum voluptate tenetur maiores molestias. Recusandae odit sequi dolores facilis laudantium!
-        Iure, totam laudantium. Et eos dignissimos adipisci! Ex cum unde aliquam sed dignissimos debitis dolore exercitationem explicabo neque voluptates omnis, quisquam magnam fuga vero praesentium iusto! Assumenda consectetur hic nobis!
-        Unde, voluptate? Nemo ducimus sit in. Nulla delectus perspiciatis at fuga dicta, officia ducimus perferendis nisi quia quisquam aliquid illo assumenda! Pariatur, doloremque beatae! Temporibus quia vitae placeat mollitia qui.
-        Quia cum laboriosam incidunt vitae, illo eius quidem animi accusantium deleniti praesentium corrupti, doloribus deserunt! Ullam, illo magnam atque accusamus rem ea quis. Rerum minus minima iure magni, perspiciatis blanditiis.
-        Itaque autem sunt tenetur facere ratione necessitatibus sit repellat illum, sint molestias saepe earum mollitia. Distinctio provident fuga iste, porro earum a laborum quidem soluta nesciunt obcaecati labore ea autem.
-        Vero ad vitae reprehenderit, ullam ut possimus ipsam iusto magnam autem accusamus expedita explicabo sint rem delectus ipsa quas non repudiandae, velit dolor quam obcaecati? Cumque nostrum ipsa facilis ea!
-        Molestias quod fuga labore unde nostrum ratione a quasi odit, exercitationem, laborum necessitatibus repellat. Veritatis mollitia illo, rem dolor quae culpa! Illum labore laboriosam consequatur cum repellat sed consequuntur provident!
-        Fugit nisi sapiente quidem, explicabo doloribus laborum totam, animi recusandae corrupti impedit inventore dolor quaerat tempore quas dolorum vitae obcaecati, accusamus reprehenderit? Unde consequuntur distinctio optio doloribus beatae doloremque accusantium.
+      <div class="dataColumn col-md-8"> 
+        <aside id="descriptionBox" class="col-md-12 bg-warning">
+          weather descripton
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse eum voluptate ipsam possimus consequatur, sit amet aperiam quod similique a, aliquam exercitationem alias quaerat, accusantium vel laborum error. Omnis, qui?
+          Beatae, maxime libero quibusdam perspiciatis maiores quis temporibus facere mollitia cupiditate tempore nemo eum. Libero, amet enim dolor, reiciendis veritatis nam cupiditate quas ea nisi pariatur, impedit ab perferendis rerum.
+          Optio incidunt maiores atque dolore ducimus commodi deleniti impedit aut, harum expedita quis, dicta autem reiciendis esse a vero dolorum. Illo omnis quasi amet cumque incidunt possimus perspiciatis ad sequi.
+          Minus, maxime! Ipsa, voluptates odit cumque, voluptate nihil at doloremque ratione mollitia quae impedit ut? Corporis harum, exercitationem perspiciatis laudantium, veniam asperiores autem praesentium esse quasi placeat voluptas blanditiis ipsa.
+          Optio deleniti vero et ducimus autem iure eum praesentium soluta, atque commodi quidem aspernatur architecto magni ipsam excepturi hic sequi? Cum quod libero fugit voluptates incidunt beatae autem eum numquam?
+          Ipsa libero ad ipsam blanditiis repellendus! Totam ipsa voluptate perspiciatis mollitia libero ratione magnam, repudiandae quos nemo asperiores ullam corporis ipsam ex amet possimus quaerat beatae dolore doloremque cum pariatur.
+          Est, ipsam magni incidunt iusto facilis voluptatibus nulla similique. Dolore dicta distinctio iusto molestias? Possimus assumenda dicta libero, quo facere illo distinctio architecto laborum atque error fugit est eos numquam?
+          Iure dolores, animi laboriosam facilis porro architecto, nemo molestiae adipisci voluptate molestias dolorem natus. Voluptatem quibusdam quod harum temporibus eum animi repudiandae pariatur, ex rerum! Ipsa odio assumenda a omnis!
+          Recusandae assumenda, ipsam quae pariatur excepturi ut? Eius perferendis deserunt ex accusantium aliquam obcaecati repellendus non, magni mollitia ab earum hic, ullam cumque maiores officiis, velit voluptatum. Libero, labore cum.
+          Deserunt, inventore, cum quis voluptate eaque accusamus quae mollitia, odio nemo quas eveniet dolore incidunt cupiditate consectetur dolor quisquam. Minus, facere doloremque iusto non cum fuga explicabo enim a sit?
+        </aside>
+        
+        <aside id="forcastBox" class="col-md-12 bg-info">
+          forcast
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae ipsum id est provident consectetur, amet dolores culpa facilis ea, consequuntur, numquam soluta qui ullam fuga pariatur delectus saepe iste et.
+          Maiores ea rem saepe doloribus quod ut quas blanditiis possimus perspiciatis nostrum, excepturi non aliquam est exercitationem animi voluptatum, neque quia illo distinctio delectus! Distinctio at ipsam minima odit nesciunt!
+          Beatae quidem quo perspiciatis, nulla quae numquam doloremque dignissimos atque non quibusdam illum reiciendis, ullam consequuntur fugiat facere eius excepturi inventore sunt commodi eveniet. Cupiditate laborum et voluptates veritatis sapiente?
+        </aside>
 
-      </aside>
+    </div> 
+      
 
 
 
-      <aside id="forcastBox" class="col-md-8 bg-info">
-        forcast
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae ipsum id est provident consectetur, amet dolores culpa facilis ea, consequuntur, numquam soluta qui ullam fuga pariatur delectus saepe iste et.
-        Maiores ea rem saepe doloribus quod ut quas blanditiis possimus perspiciatis nostrum, excepturi non aliquam est exercitationem animi voluptatum, neque quia illo distinctio delectus! Distinctio at ipsam minima odit nesciunt!
-        Beatae quidem quo perspiciatis, nulla quae numquam doloremque dignissimos atque non quibusdam illum reiciendis, ullam consequuntur fugiat facere eius excepturi inventore sunt commodi eveniet. Cupiditate laborum et voluptates veritatis sapiente?
-      </aside>
+
+
 
   </div>
 </main>
