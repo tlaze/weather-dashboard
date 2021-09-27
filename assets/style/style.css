@@ -1,9 +1,7 @@
 header{
     color:white;
     background-image: linear-gradient(to right, #007FFF , #034694);
-    height: 100px;
-
-    
+    height: 100px;  
 }
 
 header div{
@@ -19,6 +17,7 @@ header div{
 
 #boxContainers{
     border:1px solid black;
+    margin-top: 25px;
 }
 
 #searchBox{
