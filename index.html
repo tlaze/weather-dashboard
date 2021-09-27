@@ -4,36 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/style/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/style/style.css">
   <title>Document</title>
 </head>
+
 <body>
   
 <header>
-<div>
-  <h1>Weather Dashboard</h1>
-</div>
+  <div>
+    <h1>Weather Dashboard</h1>
+  </div>
 </header>
 
 <main>
 
-  <div id="boxContainers" >
+  <div id="boxContainers" class="bg-secondary">
     
     <div class="row">
 
-      <section id="searchBox" class="col-4">
-        search box
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolorum itaque, laborum iste magni quaerat maiores aliquid libero rerum in quia dolore dolor, eius alias! Ut sint sapiente incidunt unde!
-        Facilis quia adipisci vitae iusto, recusandae distinctio quos ducimus. Deleniti aliquam recusandae fugiat. Optio impedit modi, beatae nulla iure quibusdam. Iusto esse facere magni omnis beatae, soluta quo unde ea?
-        Tempore officia similique labore quisquam ullam, dolorum, molestiae minus distinctio, aperiam modi eaque ab. Deserunt aliquam veritatis quia tempora nam perspiciatis exercitationem nisi reiciendis necessitatibus minima quidem mollitia, quos fugiat.
-        Aperiam animi tempore molestias voluptatem voluptatum, iusto maiores. Voluptatem, magni sequi neque eaque repudiandae ad a non soluta beatae dolores molestiae maiores sit quisquam repellat atque architecto accusamus odio consectetur?
-        Assumenda, quibusdam accusantium necessitatibus ut maiores omnis sint velit quam earum dolorum libero alias recusandae tempora. Aspernatur optio quibusdam voluptatem! Excepturi eligendi nemo deleniti placeat voluptates ex animi nostrum quibusdam!
-      </section>
-      
+      <div id="searchBox" class="col-4  bg-success text-light">
+        <label class="col-lg text-center mx-auto" id="searchLabel">Search for a City</label>
+        <input type="text" id="cityName" autofocus class="form-control col-12">
+        <button type="button" onclick="clicked()" class="btn btn-primary btn-sm col-lg">Search</button>
+      </div>   
 
-      <aside id="descriptionBox" class="col-8">
+      <aside id="descriptionBox" class="col-8 bg-warning">
         weather descripton
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse eum voluptate ipsam possimus consequatur, sit amet aperiam quod similique a, aliquam exercitationem alias quaerat, accusantium vel laborum error. Omnis, qui?
         Beatae, maxime libero quibusdam perspiciatis maiores quis temporibus facere mollitia cupiditate tempore nemo eum. Libero, amet enim dolor, reiciendis veritatis nam cupiditate quas ea nisi pariatur, impedit ab perferendis rerum.
@@ -47,24 +44,20 @@
         Deserunt, inventore, cum quis voluptate eaque accusamus quae mollitia, odio nemo quas eveniet dolore incidunt cupiditate consectetur dolor quisquam. Minus, facere doloremque iusto non cum fuga explicabo enim a sit?
       </aside>
       
-        <aside id="forcastBox" class="offset-4 col-8">
+        <aside id="forcastBox" class="offset-4 col-8 bg-info">
           forcast
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae ipsum id est provident consectetur, amet dolores culpa facilis ea, consequuntur, numquam soluta qui ullam fuga pariatur delectus saepe iste et.
           Maiores ea rem saepe doloribus quod ut quas blanditiis possimus perspiciatis nostrum, excepturi non aliquam est exercitationem animi voluptatum, neque quia illo distinctio delectus! Distinctio at ipsam minima odit nesciunt!
           Beatae quidem quo perspiciatis, nulla quae numquam doloremque dignissimos atque non quibusdam illum reiciendis, ullam consequuntur fugiat facere eius excepturi inventore sunt commodi eveniet. Cupiditate laborum et voluptates veritatis sapiente?
         </aside>
-    
-  
 
-  
   </div>
 </main>
 
-
-
-
-
-
 <script src="./assets/js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
