@@ -1,7 +1,7 @@
 var openWeatherKey = "e3b4d1333323f6175037fc68166fb554";
 
 function init(){
-    $("#pastSearchBox").hide();
+    searchHistory();
     $("#forcastBox").hide();
     $("#searchButton").click(citySearch);
 }
@@ -11,12 +11,9 @@ function citySearch(){
     var userInput = $("#cityName").val();
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&units=imperial" + "&appid=" + openWeatherKey;
     
-    
     fetch(queryURL)
     .then(function (response) {
         if (response.status !== 200) {
-            
-            
             alert("Enter a Valid City");
         }
         else{
@@ -24,29 +21,68 @@ function citySearch(){
         }
     })
     .then(function (data) {
-        $("#pastSearchBox").show();
-        $("#forcastBox").show();
         $("#cityName").val('');
-        previousSearches(data);
+        toLocalStorage(data);
+        searchDisplay();
         displayDescription(data);
         getUVIndex(data);
         setForcast(data);
-
+        $("#pastSearchBox").show();
+        $("#forcastBox").show();
+        
     })  
 }
 
-function previousSearches(data){
-
-    var cityArray = [];
-    cityArray.push(data);
-
-    for(var i = 0; i < cityArray.length; i++){
-        var listItem = document.createElement("button");
-        var listText = document.createTextNode(data.name);
-        listItem.appendChild(listText);
-    }
-    document.getElementById("pastSearchBox").appendChild(listItem).className = "newButtons btn btn-secondary btn-sm col-12";
+function toLocalStorage(data){
     
+    var storedCity = data.name;
+    var cityObj = {
+        name: storedCity,
+    }
+    var cityArray = JSON.parse(localStorage.getItem('City'));
+
+    if(cityArray == null){
+        localStorage.setItem('City',JSON.stringify([]));
+        toLocalStorage(data);
+    }
+    else{
+        cityArray.push(cityObj);
+        localStorage.setItem("City",JSON.stringify(cityArray));
+    }
+}
+function searchHistory(){
+
+    var cityList = JSON.parse(localStorage.getItem('City'));
+    if(cityList == null){
+        $("#pastSearchBox").hide();
+        return
+    }
+    else{
+        for(var i = 0; i < cityList.length; i++){
+            var listItem = document.createElement("button");
+            var listText = document.createTextNode(cityList[i].name);
+            listItem.appendChild(listText);
+            document.getElementById("pastSearchBox").appendChild(listItem).className ="newButtons btn btn-secondary btn-sm col-12";
+        }
+    }
+}
+
+function searchDisplay(){
+
+    var cityList = JSON.parse(localStorage.getItem('City'));
+    if(cityList == null){
+        return
+    }
+    else{
+        for(var i = 0; i < cityList.length; i++){
+            var listItem = document.createElement("button");
+            var listText = document.createTextNode(cityList[i].name);
+            listItem.appendChild(listText);
+        }
+        document.getElementById("pastSearchBox").appendChild(listItem).className ="newButtons btn btn-secondary btn-sm col-12";
+
+    }
+
 }
 
 function displayDescription(data){
