@@ -19,10 +19,14 @@ header div{
 }
 
 #searchButton{
-    margin-bottom:20px;
+    margin-bottom:10px;
 }
 
 #pastSearchBox{
     border-top: 3px solid black;
+}
+
+.newButtons{
+    margin-top:10px;
 }
 
