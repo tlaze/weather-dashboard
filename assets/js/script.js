@@ -10,7 +10,6 @@ function citySearch(){
     }
     
     toLocalStorage(cityObj);
-    previousSearches();
     retrieveData(cityObj);
     $("#cityName").val('');
 }
@@ -30,31 +29,41 @@ function toLocalStorage(newCity){
     }
 }
 
-function previousSearches(){
-;
-    var displayedCities = JSON.parse(localStorage.getItem('City'));
-
-    for(var i = 0; i < displayedCities.length; i++){
-        var listItem = document.createElement("button");
-        var listText = document.createTextNode(displayedCities[i].city);
-        listItem.appendChild(listText);
-    }
-    document.getElementById("pastSearchBox").appendChild(listItem).className = "newButtons btn btn-secondary btn-sm col-12";
-}
 
 function retrieveData(currentCity){
     var city = currentCity.city;
     console.log(city);
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + openWeatherKey;
-
-
+    
+    
     fetch(queryURL)
-    .then(response => response.json())
-    .then(data => console.log(data));
-  
-
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        previousSearches(data);
+    })   
 }
 
-//create and display list of stored inputs
-//get weather data when clicking previous inputs
-//make header with bootstrap
+function previousSearches(data){
+
+    var displayedCities = JSON.parse(localStorage.getItem('City'));
+
+    for(var i = 0; i < displayedCities.length; i++){
+        var listItem = document.createElement("button");
+        var listText = document.createTextNode(data.name);
+        listItem.appendChild(listText);
+    }
+    document.getElementById("pastSearchBox").appendChild(listItem).className = "newButtons btn btn-secondary btn-sm col-12";
+    displayDescription(data);
+}
+
+function displayDescription(data){
+    console.log(data.weather[0].icon);
+    $("#cityID").text(data.name);
+    $("#dateID").text(moment().format("MMM Do YY"));
+    var iconCode = data.weather[0].icon;
+    var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+    $("#iconID").attr("src", iconURL);
+}

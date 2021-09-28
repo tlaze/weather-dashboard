@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/style/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   <title>Document</title>
 </head>
 
@@ -36,7 +37,7 @@
 
       <div class="dataColumn col-md-8"> 
         <aside id="descriptionBox" class="col-md-12">
-          <h3>City (Date) Icon</h3>
+          <h3><span id="cityID"></span> | <span id="dateID"></span> | <img id="iconID" src=" " alt="Weather Condition"></img></h3>
           <h5>Temp:</h5>
           <h5>Wind:</h5>
           <h5>Humidity:</h5>
