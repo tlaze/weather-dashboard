@@ -63,6 +63,7 @@ function searchHistory(){
             var listText = document.createTextNode(cityList[i].name);
             listItem.appendChild(listText);
             document.getElementById("pastSearchBox").appendChild(listItem).className ="newButtons btn btn-secondary btn-sm col-12";
+            listItem.setAttribute("onclick", "searchButtonClicked(this)");
         }
     }
 }
@@ -80,8 +81,34 @@ function searchDisplay(){
             listItem.appendChild(listText);
         }
         document.getElementById("pastSearchBox").appendChild(listItem).className ="newButtons btn btn-secondary btn-sm col-12";
+            listItem.setAttribute("onclick", "searchButtonClicked(this)");
 
     }
+}
+
+function searchButtonClicked(event){
+    var buttonPath = this.event.path[0].childNodes[0].data;
+    
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + buttonPath + "&units=imperial" + "&appid=" + openWeatherKey;
+    
+    fetch(queryURL)
+    .then(function (response) {
+        if (response.status !== 200) {
+            alert("Enter a Valid City");
+        }
+        else{
+            return response.json();
+        }
+    })
+    .then(function (data) {
+        displayDescription(data);
+        getUVIndex(data);
+        setForcast(data);
+        $("#forcastBox").show();
+        return;
+        
+    })  
+
 
 }
 
