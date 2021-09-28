@@ -15,7 +15,7 @@
 <body>
   
 <header>
-  <nav class="navbar justify-content-center">
+  <nav class="navbar justify-content-center col-12">
     <span class="navbar-text">Weather Dashboard</span>
   </nav>
 </header>
@@ -25,10 +25,10 @@
   <div id="boxContainers">
     
     <div class="row">
-      <div class="searchColumn col-md-4">
+      <div class="searchColumn col-md-2">
         <section id="searchBox" class="col-md-12">
           <h3 class="col-lg text-center" id="searchLabel">Search for a City</h3>
-          <input type="text" id="cityName" placeholder="City Name" autofocus class="form-control-lg col-12">
+          <input type="text" id="cityName" placeholder="City Name" class="form-control-lg col-12">
           <button id="searchButton" value="submit" type="button" class="btn btn-primary btn-sm col-lg">Search</button>
           <p id="pastSearchBox" class="text-center">Previous Searches</p>
         </section> 
@@ -38,18 +38,65 @@
       <div class="dataColumn col-md-8"> 
 
         <aside id="descriptionBox" class="col-md-12">
-          <h3 class="text-center"><span id="cityID"></span><span id="dateID"></span><img id="iconID" src=""></img></h3>
+          <h3 class="text-center" style="color:#011329"><span id="cityID">City Weather Information</span><span id="dateID"></span><img id="iconID" src=""></img></h3>
           <h5 id="tempID">Temp:</h5>
           <h5 id="windID">Wind:</h5>
           <h5 id="humidityID">Humidity:</h5>
           <h5 id="uvID">UV Index:</h5>
         </aside>
         
-        <aside id="forcastBox" class="col-md-12">
-          forcast
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae ipsum id est provident consectetur, amet dolores culpa facilis ea, consequuntur, numquam soluta qui ullam fuga pariatur delectus saepe iste et.
-          Maiores ea rem saepe doloribus quod ut quas blanditiis possimus perspiciatis nostrum, excepturi non aliquam est exercitationem animi voluptatum, neque quia illo distinctio delectus! Distinctio at ipsam minima odit nesciunt!
-          Beatae quidem quo perspiciatis, nulla quae numquam doloremque dignissimos atque non quibusdam illum reiciendis, ullam consequuntur fugiat facere eius excepturi inventore sunt commodi eveniet. Cupiditate laborum et voluptates veritatis sapiente?
+        <aside id="forcastBox" class="card-deck col-md-12">
+
+          <h4 class="col-12 text-center" style="color:#011329;margin-top:15px;margin-bottom:20px;">Five Day Forcast:</h4>
+
+          <div class="card text-white bg-secondary col-2">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Secondary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+
+          <div class="card text-white bg-secondary col-2">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Secondary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+
+
+          <div class="card text-white bg-secondary col-2">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Secondary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+
+
+          <div class="card text-white bg-secondary col-2">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Secondary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+
+
+          <div class="card text-white bg-secondary col-2">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Secondary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+
         </aside>
 
     </div> 

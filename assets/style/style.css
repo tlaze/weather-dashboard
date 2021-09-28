@@ -1,5 +1,5 @@
 header{
-    background-image: linear-gradient(to right, #034694, #007FFF);
+    background-image: linear-gradient(to left, #011329, #2e83d8);
 }
 
 .navbar-text{
@@ -9,11 +9,11 @@ header{
 }
 
 #boxContainers{
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .searchColumn{
-    padding-left: 4%;
+    padding-left: 3%;
     margin-top: 3px;
 
 }
@@ -28,7 +28,7 @@ header{
 }
 
 #pastSearchBox{
-    border-top: 3px solid black;
+    border-top: 4px solid #2e83d8;
     padding-top:5px;
 }
 
@@ -37,6 +37,13 @@ header{
 }
 
 #descriptionBox{
-    border: 2px solid black;
+    border: 4px solid #2e83d8;
+    margin:0;
 }
 
+
+#forcastBox{
+    padding:0;
+    margin:0;
+    justify-content:space-between;
+}
