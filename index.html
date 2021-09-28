@@ -1,111 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="./assets/style/reset.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/style/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-  <title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./assets/style/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <title>Document</title>
+  </head>
 
-<body>
-  
-<header>
-  <nav class="navbar justify-content-center col-12">
-    <span class="navbar-text">Weather Dashboard</span>
-  </nav>
-</header>
+  <body>
+    <header>
+      <nav class="navbar justify-content-center col-12">
+        <span class="navbar-text">Weather Dashboard</span>
+      </nav>
+    </header>
 
-<main>
+    <main>
+      <div id="boxContainers">
+        <div class="row">
+          <div class="searchColumn col-md-2">
+            <section id="searchBox" class="col-md-12">
+              <h3 class="col-lg text-center" id="searchLabel">Search for a City</h3>
+              <input type="text" id="cityName" placeholder="City Name" class="form-control-lg col-12">
+              <button id="searchButton" value="submit" type="button" class="btn btn-primary btn-sm col-lg">Search</button>
+              <p id="pastSearchBox" class="text-center">Previous Searches</p>
+            </section> 
+          </div>
+          
+          <div class="dataColumn col-md-8"> 
+            <aside id="descriptionBox" class="col-md-12">
+              <h3 class="text-center" style="color:#011329"><span id="cityID">City Weather Information</span><span id="dateID"></span><img id="iconID" src=""></img></h3>
+              <h5 id="tempID">Temp:</h5>
+              <h5 id="windID">Wind:</h5>
+              <h5 id="humidityID">Humidity:</h5>
+              <h5 id="uvID">UV Index:</h5>
+            </aside>
+            
+            <aside id="forcastBox" class="card-deck col-md-12">
+              <h4 class="col-12 text-center" style="color:#011329;margin-top:15px;margin-bottom:20px;font-size:50px;">Five Day Forcast:</h4>
+              <div class="card text-white bg-secondary lg-col-2">
+                <div id="dayIndex0" class="card-header"></div>
+                <img id="iconIndex0" src=" "/>
+                <div class="card-body">
+                  <p class="card-text" id="tempIndex0"></p>
+                  <p class="card-text" id="windIndex0"></p>
+                  <p class="card-text" id="humidityIndex0"></p>
+                </div>
+              </div>
 
-  <div id="boxContainers">
-    
-    <div class="row">
-      <div class="searchColumn col-md-2">
-        <section id="searchBox" class="col-md-12">
-          <h3 class="col-lg text-center" id="searchLabel">Search for a City</h3>
-          <input type="text" id="cityName" placeholder="City Name" class="form-control-lg col-12">
-          <button id="searchButton" value="submit" type="button" class="btn btn-primary btn-sm col-lg">Search</button>
-          <p id="pastSearchBox" class="text-center">Previous Searches</p>
-        </section> 
+              <div class="card text-white bg-secondary lg-col-2">
+                <div id="dayIndex8" class="card-header"></div>
+                <img id="iconIndex8" src=" "/>
+                <div class="card-body">
+                  <p class="card-text" id="tempIndex8"></p>
+                  <p class="card-text" id="windIndex8"></p>
+                  <p class="card-text" id="humidityIndex8"></p>
+                </div>
+              </div>
+
+              <div class="card text-white bg-secondary lg-col-2">
+                <div id="dayIndex16" class="card-header"></div>
+                <img id="iconIndex16" src="">
+                <div class="card-body">
+                  <p class="card-text" id="tempIndex16"></p>
+                  <p class="card-text" id="windIndex16"></p>
+                  <p class="card-text" id="humidityIndex16"></p>
+                </div>
+              </div>
+
+              <div class="card text-white bg-secondary lg-col-2">
+                <div id="dayIndex24" class="card-header"></div>
+                <img id="iconIndex24" src=""/>
+                <div class="card-body">
+                  <p class="card-text" id="tempIndex24"></p>
+                  <p class="card-text" id="windIndex24"></p>
+                  <p class="card-text" id="humidityIndex24"></p>
+                </div>
+              </div>
+
+              <div class="card text-white bg-secondary lg-col-2">
+                <div id="dayIndex32" class="card-header"></div>
+                <img id="iconIndex32" src="">
+                <div class="card-body">
+                  <p class="card-text" id="tempIndex32"></p>
+                  <p class="card-text" id="windIndex32"></p>
+                  <p class="card-text" id="humidityIndex32"></p>
+                </div>
+              </div>
+            </aside>
+        </div> 
       </div>
-      
-
-      <div class="dataColumn col-md-8"> 
-
-        <aside id="descriptionBox" class="col-md-12">
-          <h3 class="text-center" style="color:#011329"><span id="cityID">City Weather Information</span><span id="dateID"></span><img id="iconID" src=""></img></h3>
-          <h5 id="tempID">Temp:</h5>
-          <h5 id="windID">Wind:</h5>
-          <h5 id="humidityID">Humidity:</h5>
-          <h5 id="uvID">UV Index:</h5>
-        </aside>
-        
-        <aside id="forcastBox" class="card-deck col-md-12">
-
-          <h4 class="col-12 text-center" style="color:#011329;margin-top:15px;margin-bottom:20px;">Five Day Forcast:</h4>
-
-          <div class="card text-white bg-secondary col-2">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Secondary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-
-          <div class="card text-white bg-secondary col-2">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Secondary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-
-
-          <div class="card text-white bg-secondary col-2">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Secondary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-
-
-          <div class="card text-white bg-secondary col-2">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Secondary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-
-
-          <div class="card text-white bg-secondary col-2">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Secondary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-
-
-        </aside>
-
-    </div> 
-  </div>
-</main>
-
-<script src="./assets/js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    </main>
+    <script src="./assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
