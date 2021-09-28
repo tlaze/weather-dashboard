@@ -12,6 +12,7 @@ function citySearch(){
     toLocalStorage(cityObj);
     previousSearches();
     retrieveData(cityObj);
+    $("#cityName").val('');
 }
 
 function toLocalStorage(newCity){
@@ -37,8 +38,8 @@ function previousSearches(){
         var listItem = document.createElement("button");
         var listText = document.createTextNode(displayedCities[i].city);
         listItem.appendChild(listText);
-        document.getElementById("pastSearchBox").appendChild(listItem).className = "newButtons btn btn-primary btn-sm col-12";
     }
+    document.getElementById("pastSearchBox").appendChild(listItem).className = "newButtons btn btn-secondary btn-sm col-12";
 }
 
 function retrieveData(currentCity){
@@ -46,7 +47,12 @@ function retrieveData(currentCity){
     console.log(city);
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + openWeatherKey;
 
-    fetch(queryURL);
+
+    fetch(queryURL)
+    .then(response => response.json())
+    .then(data => console.log(data));
+  
+
 }
 
 //create and display list of stored inputs

@@ -14,32 +14,36 @@
 <body>
   
 <header>
-  <div>
-    <h1>Weather Dashboard</h1>
-  </div>
+  <nav class="navbar justify-content-center">
+    <span class="navbar-text">Weather Dashboard</span>
+  </nav>
 </header>
 
 <main>
 
-  <div id="boxContainers" class="bg-secondary">
+  <div id="boxContainers">
     
     <div class="row">
       <div class="searchColumn col-md-4">
-        <section id="searchBox" class="col-md-12 bg-success text-light">
-          <label class="col-lg text-center" id="searchLabel">Search for a City</label>
-          <input type="text" id="cityName" placeholder="City Name" autofocus class="form-control">
-          <button id="searchButton" type="button" class="btn btn-primary btn-sm col-lg">Search</button>
-          <p id="pastSearchBox" class="bg-danger">
+        <section id="searchBox" class="col-md-12">
+          <h3 class="col-lg text-center" id="searchLabel">Search for a City</h3>
+          <input type="text" id="cityName" placeholder="City Name" autofocus class="form-control-lg col-12">
+          <button id="searchButton" value="submit" type="button" class="btn btn-primary btn-sm col-lg">Search</button>
+          <p id="pastSearchBox" class="text-center">Previous Searches</p>
         </section> 
       </div>
       
 
       <div class="dataColumn col-md-8"> 
-        <aside id="descriptionBox" class="col-md-12 bg-warning">
-          weather descripton
+        <aside id="descriptionBox" class="col-md-12">
+          <h3>City (Date) Icon</h3>
+          <h5>Temp:</h5>
+          <h5>Wind:</h5>
+          <h5>Humidity:</h5>
+          <h5>UV Index:</h5>
         </aside>
         
-        <aside id="forcastBox" class="col-md-12 bg-info">
+        <aside id="forcastBox" class="col-md-12">
           forcast
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae ipsum id est provident consectetur, amet dolores culpa facilis ea, consequuntur, numquam soluta qui ullam fuga pariatur delectus saepe iste et.
           Maiores ea rem saepe doloribus quod ut quas blanditiis possimus perspiciatis nostrum, excepturi non aliquam est exercitationem animi voluptatum, neque quia illo distinctio delectus! Distinctio at ipsam minima odit nesciunt!
