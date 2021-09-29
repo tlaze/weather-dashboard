@@ -1,12 +1,14 @@
-var openWeatherKey = "e3b4d1333323f6175037fc68166fb554";
-$("#clearStorage").click(clearStorage);
+var openWeatherKey = "e3b4d1333323f6175037fc68166fb554";    //OpenWeather API Key
 
+//Function gets called to initiate program
 function init(){
     searchHistory();
     $("#forcastBox").hide();
+    $("#clearStorage").click(clearStorage);
     $("#searchButton").click(citySearch);
 }
 
+//When user types a city into the search bar, their input is used to fetch data from Open Weather API
 function citySearch(){
 
     var userInput = $("#cityName").val();
@@ -15,12 +17,14 @@ function citySearch(){
     fetch(queryURL)
     .then(function (response) {
         if (response.status !== 200) {
-            alert("Enter a Valid City");
+            alert("Not A Valid City! Please Try Again.");
         }
         else{
             return response.json();
         }
     })
+
+    //Follows these functions after retrieving data
     .then(function (data) {
         $("#cityName").val('');
         toLocalStorage(data);
@@ -30,11 +34,11 @@ function citySearch(){
         setForcast(data);
         $("#clearStorage").show();
         $("#pastSearchBox").show();
-        $("#forcastBox").show();
-        
+        $("#forcastBox").show();      
     })  
 }
 
+//Stores an object array of city names into local storage
 function toLocalStorage(data){
     
     var storedCity;
@@ -55,7 +59,7 @@ function toLocalStorage(data){
     }
 }
 
-//Shows search history if theres cities in local storage on start
+//Shows search history on page load if there are cities already stored in local storage
 function searchHistory(){
 
     var cityList = JSON.parse(localStorage.getItem('City'));
@@ -65,6 +69,7 @@ function searchHistory(){
         return
     }
     else{
+        //Iterates through array of cities and creates a button for each city name. Adds class name/styling to buttons and sets an event listener on each button if they are clicked
         for(var i = 0; i < cityList.length; i++){
             var listItem = document.createElement("button");
             var listText = document.createTextNode(cityList[i].name);
@@ -75,6 +80,7 @@ function searchHistory(){
     }
 }
 
+//Displays search history live while user is using application
 function searchDisplay(){
 
     var cityList = JSON.parse(localStorage.getItem('City'));
@@ -92,6 +98,7 @@ function searchDisplay(){
     }
 }
 
+//Function for each button created for previous searches. Locates the city name of the button that is clicked. Adds that city name back to the API to retrieve data again.
 function searchButtonClicked(event){
     var buttonPath = this.event.path[0].childNodes[0].data;
     
@@ -106,6 +113,7 @@ function searchButtonClicked(event){
             return response.json();
         }
     })
+    //Once fetched program continues with these functions to show data for clicked search history buttons
     .then(function (data) {
         displayDescription(data);
         getUVIndex(data);
@@ -115,6 +123,7 @@ function searchButtonClicked(event){
     })  
 }
 
+//Displays weather data from API
 function displayDescription(data){
 
     $("#cityID").text(data.name + " | ");
@@ -127,7 +136,7 @@ function displayDescription(data){
     $("#humidityID").text("Humidity: " + data.main.humidity + "%");
 }
 
-
+//Retrieves the data for UV Index by entering the latitude and longitude from previous API fetch.
 function getUVIndex(data){
     var lat = data.coord.lat;
     var lon = data.coord.lon;
@@ -138,6 +147,7 @@ function getUVIndex(data){
     .then(function (response) {
         return response.json();
     })
+    //Displays color corresponding with UV Index Level
     .then(function (data) {
         if(data.current.uvi <= 3){
             $("#uvID").text("UV Index: " + data.current.uvi + "  --------- Low Levels Today");
@@ -167,6 +177,7 @@ function getUVIndex(data){
     })     
 }
 
+//Retrieves data to display 5 day forcast
 function setForcast(data){
 
     var cityName = data.name;
@@ -176,11 +187,13 @@ function setForcast(data){
     .then(function (response) {
         return response.json();
     })
+    //Weather data is stored every 3 hours. 8*3 = 24 hours. Loop iterates by 8 to display data for each day.
     .then(function (data) {
         for(var i = 0; i <= 32; i+=8){
-            $("#dayIndex" + i).text(moment.unix(data.list[i].dt).format("MMM Do"));
+            $("#dayIndex" + i).text(moment.unix(data.list[i].dt).format("MMM Do"));     //Gets data from moment.js to dislay the time
+            //Displays the icon from the API data
             var iconCode = data.list[i].weather[0].icon;
-            var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+            var iconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
             $("#iconIndex" + i).attr("src", iconURL);
             $("#tempIndex" + i).text("Temp: " + data.list[i].main.temp + "\u00B0F");
             $("#windIndex" + i).text("Wind: " + data.list[i].wind.speed + " MPH");
@@ -188,11 +201,12 @@ function setForcast(data){
         }
     })
 }
-
+//Clears local storage and alters display when clear history button is clicked
 function clearStorage(){
     $("#clearStorage").hide();
     $("#forcastBox").hide();
     localStorage.clear();
     location.reload();
 }
+//Initiates program
 init();

@@ -14,25 +14,30 @@
 
   <body>
     <header>
-      <nav class="navbar justify-content-center col-12">
+      <nav class="navbar justify-content-center container-fluid col-12">
         <span class="navbar-text">Weather Dashboard</span>
       </nav>
     </header>
 
     <main>
+      <!-- Contains all the rows -->
       <div id="boxContainers" class="container-fluid">
         <div class="row">
+          <!-- Left column containing search box and history -->
           <div class="searchColumn col-lg-3 col-md-3">
+            <!-- Search Box -->
             <section id="searchBox" class="col-lg-12">
               <h3 class="text-center" id="searchLabel">Search for a City</h3>
               <input type="text" id="cityName" placeholder="City Name" class="form-control-lg col-12">
+
               <button id="searchButton" value="submit" type="button" class="btn btn-primary btn-sm col-12">Search</button>
               <button id="clearStorage" class="btn btn-danger btn-sm col-12">Clear History</button>
               <p id="pastSearchBox" class="text-center">Previous Searches</p>
             </section> 
           </div>
-          
+          <!-- Right column containing the displayed weather data -->
           <div class="dataColumn col-lg-9 col-md-9"> 
+            <!-- Box containing current city weather information -->
             <aside id="descriptionBox">
               <h3 class="text-center" style="color:#011329"><span id="cityID">City Weather Information</span><span id="dateID"></span><img id="iconID" src=""></img></h3>
               <h5 id="tempID">Temp:</h5>
@@ -40,12 +45,14 @@
               <h5 id="humidityID">Humidity:</h5>
               <h5 id="uvID">UV Index:</h5>
             </aside>
-            
+            <!-- Box containing 5 day forcast of city -->
             <aside id="forcastBox" class="card-deck col-12">
               <h4 class="col-12 text-center" id="forcastTitle">Five Day Forcast:</h4>
+              <!-- Cards that display each day -->
               <div class="card text-white bg-secondary">
                 <div id="dayIndex0" class="card-header"></div>
                 <img id="iconIndex0" src=" "/>
+                
                 <div class="card-body">
                   <p class="card-text" id="tempIndex0"></p>
                   <p class="card-text" id="windIndex0"></p>
