@@ -13,7 +13,7 @@ header{
 }
 
 .searchColumn{
-    padding-left: 3%;
+    /* padding-left: 3%; */
     margin-top: 3px;
 
 }
@@ -23,10 +23,12 @@ header{
     margin-bottom: 20px;
 }
 
-
-
 #searchButton{
     margin-bottom:25px;
+}
+
+#clearStorage{
+    margin-bottom: 20px;
 }
 
 #pastSearchBox{
@@ -49,10 +51,19 @@ header{
     justify-content:space-between;
 }
 
+#forcastTitle{
+    color:#011329;
+    margin-top:15px;
+    margin-bottom:20px;
+    font-size:30px;
+    text-decoration:underline;
+}
+
 .card-header{
     font-size:20px;
     text-align:center;
 }
+
 
 .card-text{
     font-size:15px;

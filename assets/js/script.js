@@ -1,4 +1,5 @@
 var openWeatherKey = "e3b4d1333323f6175037fc68166fb554";
+$("#clearStorage").click(clearStorage);
 
 function init(){
     searchHistory();
@@ -27,6 +28,7 @@ function citySearch(){
         displayDescription(data);
         getUVIndex(data);
         setForcast(data);
+        $("#clearStorage").show();
         $("#pastSearchBox").show();
         $("#forcastBox").show();
         
@@ -35,10 +37,8 @@ function citySearch(){
 
 function toLocalStorage(data){
     
-    var storedCity = data.name;
-    var cityObj = {
-        name: storedCity,
-    }
+    var storedCity;
+
     var cityArray = JSON.parse(localStorage.getItem('City'));
 
     if(cityArray == null){
@@ -46,14 +46,21 @@ function toLocalStorage(data){
         toLocalStorage(data);
     }
     else{
+        storedCity = data.name;
+        var cityObj = {
+            name: storedCity,
+        }
         cityArray.push(cityObj);
         localStorage.setItem("City",JSON.stringify(cityArray));
     }
 }
+
+//Shows search history if theres cities in local storage on start
 function searchHistory(){
 
     var cityList = JSON.parse(localStorage.getItem('City'));
     if(cityList == null){
+        $("#clearStorage").hide();
         $("#pastSearchBox").hide();
         return
     }
@@ -82,7 +89,6 @@ function searchDisplay(){
         }
         document.getElementById("pastSearchBox").appendChild(listItem).className ="newButtons btn btn-secondary btn-sm col-12";
             listItem.setAttribute("onclick", "searchButtonClicked(this)");
-
     }
 }
 
@@ -105,11 +111,8 @@ function searchButtonClicked(event){
         getUVIndex(data);
         setForcast(data);
         $("#forcastBox").show();
-        return;
-        
+        return;  
     })  
-
-
 }
 
 function displayDescription(data){
@@ -164,13 +167,11 @@ function getUVIndex(data){
     })     
 }
 
-
 function setForcast(data){
 
     var cityName = data.name;
     var forcastQuery = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=" + openWeatherKey;
  
-
     fetch(forcastQuery)
     .then(function (response) {
         return response.json();
@@ -179,13 +180,19 @@ function setForcast(data){
         for(var i = 0; i <= 32; i+=8){
             $("#dayIndex" + i).text(moment.unix(data.list[i].dt).format("MMM Do"));
             var iconCode = data.list[i].weather[0].icon;
-            var iconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+            var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
             $("#iconIndex" + i).attr("src", iconURL);
             $("#tempIndex" + i).text("Temp: " + data.list[i].main.temp + "\u00B0F");
             $("#windIndex" + i).text("Wind: " + data.list[i].wind.speed + " MPH");
             $("#humidityIndex" + i).text("Humidity: " + data.list[i].main.humidity + "%");     
         }
     })
+}
 
+function clearStorage(){
+    $("#clearStorage").hide();
+    $("#forcastBox").hide();
+    localStorage.clear();
+    location.reload();
 }
 init();
