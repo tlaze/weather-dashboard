@@ -30,7 +30,7 @@ moment.js
 <img width="322" alt="Screen Shot 2021-09-28 at 22 45 37" src="https://user-images.githubusercontent.com/47471193/135194446-f09161ef-fd11-4c98-8df1-f4dec166ad32.png">
 
 
-##Links
+## Links
 
 Live Application: https://tlaze.github.io/weather-dashboard/
 
