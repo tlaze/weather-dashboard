@@ -1,6 +1,6 @@
 # weather-dashboard
 
-##Description
+## Description
 
 Uses OpenWeather One Call API to retrieve weather data for user inputed cities.
 
@@ -9,7 +9,7 @@ Stores and displays user search history, current weather data, and the current c
 Uses local storage to display previous searches after leaving or refreshing the page.
 
 
-##Built With:
+## Built With:
 
 HTML/CSS/Javascript
 
@@ -22,7 +22,7 @@ OpenWeather One API
 moment.js
 
 
-##Screenshots
+## Screenshots
 
 <img width="1231" alt="Screen Shot 2021-09-28 at 22 44 22" src="https://user-images.githubusercontent.com/47471193/135194436-0e89c4ba-ce33-4ef9-99cc-26b99428f4ba.png">
 
@@ -37,7 +37,7 @@ Live Application: https://tlaze.github.io/weather-dashboard/
 Github Repository: https://github.com/tlaze/weather-dashboard
 
 
-##License
+## License
 Copyright (c) 2021 Tom Lazore
 
 Permission is hereby granted, free of charge, to any person obtaining
@@ -58,3 +58,7 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+## Contact
+tomlazore@gmail.com
